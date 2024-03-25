@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+    <table border="2px">
+        <thead>
+            <tr>
+                <th width="150px">Produto</th>
+                <th width="150px">Preço</th>
+                <th width="150px">Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach(cliente => { %>
+            <tr>
+                <td><%= cliente.nome %></td>
+                <td><%= cliente.cpf %></td>
+                <% cliente.endereco.forEach(endereco => { %>
+                <td width="400"><%= endereco.rua %>, Nº <%= endereco.numero %>, <%= endereco.bairro %> - <%= endereco.cidade %></td>
+                <% }) %>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+<%- include("partials/footer.ejs") %>
