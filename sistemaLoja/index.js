@@ -44,10 +44,10 @@ app.get("/Clientes", (req, res) => {
 
 app.get("/Produtos", (req, res) => {
     const produtos = [
-        {nome: "Notebook Acer Aspire 5", preco: 2899.00, categoria: "Notebook"},
-        {nome: "Notebook Asus Vivobook", preco: 2621.00, categoria: "Notebook"},
-        {nome: "PC Home Office", preco: 740.00, categoria: "Computador"},
-        {nome: "PC Gamer Pichau", preco: 1669.00, categoria: "Computador"}
+        {nome: "Notebook Acer Aspire 5", preco: 2899.00, categoria: "Notebook", imagem: "/imgs/imagem-01.webp"},
+        {nome: "Notebook Asus Vivobook", preco: 2621.00, categoria: "Notebook", imagem: "/imgs/imagem-01.webp"},
+        {nome: "PC Home Office", preco: 740.00, categoria: "Computador", imagem: "/imgs/imagem-02.jpg"},
+        {nome: "PC Gamer Pichau", preco: 1669.00, categoria: "Computador", imagem: "/imgs/imagem-02.jpg"}
 
     ]
     

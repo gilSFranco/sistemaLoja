@@ -1,22 +1,16 @@
 <%- include("partials/header.ejs") %>
 
-    <table border="2px">
-        <thead>
-            <tr>
-                <th width="250px">Nome</th>
-                <th width="150px">Preço</th>
-                <th width="150px">Categoria</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% produtos.forEach(produto => { %>
-            <tr>
-                <td><%= produto.nome %></td>
-                <td><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
-                <td><%= produto.categoria %></td>
-            </tr>
-            <% }) %>
-        </tbody>
-    </table>
+    <div class="containerCards">
+        <% produtos.forEach(produto => { %>
+        <div class="card" style="width: 18rem;">
+            <img src='<%= produto.imagem %>' class="card-img-top" alt="Imagem">
+            <div class="card-body">
+                <h5 class="card-title"><%= produto.nome %> (<%= produto.categoria %>)</h5>
+                <p class="card-text"><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %>.</p>
+                <a href="" class="btn btn-dark">Comprar</a>
+            </div>
+        </div>
+        <% }) %>
+    </div>
 
 <%- include("partials/footer.ejs") %>
