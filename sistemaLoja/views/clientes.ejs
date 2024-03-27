@@ -1,10 +1,11 @@
 <%- include("partials/header.ejs") %>
 
-    <table class="table table-bordered table-hover">
+    <table class="table table-dark table-striped table-hover caption-top">
+        <caption class="text-dark fw-bold fs-2">Clientes</caption>
         <thead class="table-dark">
             <tr>
-                <th scope="col">Produto</th>
-                <th scope="col">Preço</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cpf</th>
                 <th scope="col">Endereço</th>
             </tr>
         </thead>
@@ -14,7 +15,7 @@
                 <td><%= cliente.nome %></td>
                 <td><%= cliente.cpf %></td>
                 <% cliente.endereco.forEach(endereco => { %>
-                <td width="400"><%= endereco.rua %>, Nº <%= endereco.numero %>, <%= endereco.bairro %> - <%= endereco.cidade %></td>
+                <td><%= endereco.rua %>, Nº <%= endereco.numero %>, <%= endereco.bairro %> - <%= endereco.cidade %></td>
                 <% }) %>
             </tr>
             <% }) %>
