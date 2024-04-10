@@ -7,7 +7,11 @@
             <div class="card-body">
                 <h5 class="card-title"><%= produto.nome %> (<%= produto.categoria %>)</h5>
                 <p class="card-text"><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %>.</p>
-                <a href="" class="btn btn-dark">Comprar</a>
+                <a href="" class="btn btn-dark btnComprar">Comprar</a>
+            </div>            
+            <div class="acoes">
+                <a href="/produtos/edit/<%= produto._id %>" class="btn btn-warning text-white">Editar</a>
+                <a href="/produtos/delete/<%= produto._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a>
             </div>
         </div>
         <% }) %>

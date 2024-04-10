@@ -1,5 +1,16 @@
-const express = require("express")
+import express from "express"
 const app = express()
+
+import mongoose from "mongoose"
+
+import ClientesController from "./controllers/ClientesController.js"
+import ProdutosController from "./controllers/ProdutosController.js"
+import PedidosController from "./controllers/PedidosController.js"
+
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+
+mongoose.connect("mongodb://localhost:27017/sistemaLoja")
 
 app.set("view engine", "ejs")
 
@@ -9,65 +20,9 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.get("/Clientes", (req, res) => {
-    const clientes = [
-        {nome: "Gilmar Soares", cpf: "436589102-12", endereco: [{
-            rua: 'Rua Jose', 
-            numero: '60', 
-            bairro: 'Vila Mendes', 
-            cidade: 'Pariquera-acu'
-        }]},
-        {nome: "Lucas Silva", cpf: "436589102-13", endereco: [{
-            rua: 'Rua Maria',
-            numero: '06',
-            bairro: 'Vila Jose',
-            cidade: 'Cananeia'
-        }]},
-        {nome: "Luiz Claudio", cpf: "436589102-14", endereco: [{
-            rua: 'Rua Sao Matheus',
-            numero: '66',
-            bairro: 'Vila Mendes',
-            cidade: 'Registro'
-        }]},
-        {nome: "Lauany Soares", cpf: "436589102-15", endereco: [{
-            rua: 'Rua Lens',
-            numero: '33',
-            bairro: 'Vila Vinhas',
-            cidade: 'São João Novo'
-        }]}
-    ]
-
-    res.render("clientes", {
-        clientes: clientes
-    })
-})
-
-app.get("/Produtos", (req, res) => {
-    const produtos = [
-        {nome: "Notebook Acer Aspire 5", preco: 2899.00, categoria: "Notebook", imagem: "/imgs/imagem-01.webp"},
-        {nome: "Notebook Asus Vivobook", preco: 2621.00, categoria: "Notebook", imagem: "/imgs/imagem-01.webp"},
-        {nome: "PC Home Office", preco: 740.00, categoria: "Computador", imagem: "/imgs/imagem-02.jpg"},
-        {nome: "PC Gamer Pichau", preco: 1669.00, categoria: "Computador", imagem: "/imgs/imagem-02.jpg"}
-
-    ]
-    
-    res.render("produtos", {
-        produtos: produtos
-    })
-})
-
-app.get("/Pedidos", (req, res) => {
-    const pedidos = [
-        {numero: 1, valor: 120.00},
-        {numero: 2, valor: 240.00},
-        {numero: 3, valor: 360.00},
-        {numero: 4, valor: 480.00}
-    ]
-
-    res.render("pedidos", {
-        pedidos: pedidos
-    })
-})
+app.use("/", ClientesController)
+app.use("/", ProdutosController)
+app.use("/", PedidosController)
 
 app.listen(8080, erro => {
     if(erro){

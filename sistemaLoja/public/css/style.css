@@ -68,3 +68,18 @@ ul.navbar-nav .navbar-brand{
 
     font-size: 20px;
 }
+
+.acoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    gap: 20px;
+}
+
+.btnComprar{
+    width: 100%;
+    padding: 10px;
+}
