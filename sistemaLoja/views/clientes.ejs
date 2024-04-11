@@ -1,13 +1,48 @@
 <%- include("partials/header.ejs") %>
 
-    <table class="table table-dark table-striped table-hover caption-top">
-        <caption class="text-dark fw-bold fs-2">Clientes</caption>
+    <div class="formularioClientes mb-4">
+        <form action="" method="post">
+            <h1 class="text-dark fw-bold fs-2">Cadastro de Clientes</h1>
+            <div class="d-flex my-2 mt-4">
+                <div class="form-floating me-2 w-75">
+                    <input type="text" name="nome" id="floatingInput" class="form-control" placeholder="Seu nome" required>
+                    <label for="floatingInput">Nome</label>
+                </div>
+                <div class="form-floating w-75">
+                    <input type="text" name="cpf" id="floatingInput" class="form-control" placeholder="Seu cpf" required>
+                    <label for="floatingInput">CPF</label>
+                </div>
+            </div>
+            <div class="d-flex my-2">
+                <div class="form-floating me-2 w-50">
+                    <input type="text" name="rua" id="floatingInput" class="form-control" placeholder="Sua rua" required>
+                    <label for="floatingInput">Rua</label>
+                </div>
+                <div class="form-floating me-2">
+                    <input type="text" name="numero" id="floatingInput" class="form-control" placeholder="Seu numero" required>
+                    <label for="floatingInput">Numero</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="bairro" id="floatingInput" class="form-control" placeholder="Seu bairro" required>
+                    <label for="floatingInput">Bairro</label>
+                </div>
+            </div>
+            <div class="form-floating my-2 mb-4">
+                <input type="text" name="cidade" id="floatingInput" class="form-control" placeholder="Sua cidade" required>
+                <label for="floatingInput">Cidade</label>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 py-2">Cadastrar</button>
+        </form>
+    </div>
+
+    <table class="table table-dark table-striped table-hover caption-top tblClientes">
+        <caption class="text-dark fw-bold fs-2">Clientes Cadastrados</caption>
         <thead class="table-dark">
             <tr>
                 <th class="col">Nome</th>
                 <th class="col">Cpf</th>
                 <th class="col">Endereço</th>
-                <th class="col" colspan="2">Ações</th>
+                <th class="col" colspan="2" style="text-align: center;">Ações</th>
             </tr>
         </thead>
         <tbody>

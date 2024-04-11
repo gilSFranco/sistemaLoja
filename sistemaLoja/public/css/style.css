@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+.tblPedidos{
+    width: 30%;
+}
+
+.tblClientes{
+    width: 65%;
+}
+
+.formularioClientes{
+    width: 65%;
+}
+
+.formularioProdutos{
+    width: 95%;
+}
+
+.inpNome{
+    width: 100%;
+}
+
 nav{
     width: 100%;
     height: 100%;
@@ -26,9 +46,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 
-    gap: 20px;
+    flex-wrap: wrap;
+
+    gap: 30px;
 }
 
 header, footer{
