@@ -29,7 +29,7 @@ class ClienteService{
 
     Delete(id){
         Cliente.findByIdAndDelete(id).then(() => {
-            console.log(`Cliente com a id: ${id} foi deletado com sucesso.`)
+            console.log(`Cliente com o id: ${id} foi deletado com sucesso.`)
         }).catch(erro => {
             console.log(erro)
         })
@@ -44,7 +44,7 @@ class ClienteService{
             bairro: bairro,
             cidade: cidade
         }).then(() => {
-            console.log(`Cliente com a id: ${id} foi alterado com sucesso.`)
+            console.log(`Cliente com o id: ${id} foi alterado com sucesso.`)
         }).catch(erro => {
             console.log(erro)
         })

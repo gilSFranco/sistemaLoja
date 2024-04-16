@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="formularioProdutos mb-5">
+        <form action="/produtos/update/<%= produto._id %>" method="post">
+            <h1 class="text-dark fw-bold fs-2">Cadastro de Produtos</h1>
+            <div class="d-flex my-2 mt-4">
+                <div class="form-floating me-2 w-75">
+                    <input type="text" name="nome" id="floatingInput" class="form-control" value="<%= produto.nome %>" placeholder="Nome do produto" required>
+                    <label for="floatingInput">Nome</label>
+                </div>
+                <div class="form-floating w-75">
+                    <input type="text" name="preco" id="floatingInput" class="form-control" value="<%= produto.preco %>" placeholder="Preço do produto" required>
+                    <label for="floatingInput">Preço</label>
+                </div>
+            </div>
+            <div class="d-flex my-2">
+                <div class="form-floating me-2 w-75">
+                    <input type="text" name="categoria" id="floatingInput" class="form-control" value="<%= produto.categoria %>" placeholder="Categoria do produto" required>
+                    <label for="floatingInput">Categoria</label>
+                </div>
+                <div class="input-group mb-4">
+                    <input type="file" name="imagem" class="form-control" value="<%= produto.imagem %>"  id="inputGroupFile02" accept=".jpg, .jpeg, .png" required>
+                    <label class="input-group-text" for="inputGroupFile02">Escolha uma imagem</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 py-2 mt-3">Cadastrar</button>
+        </form>
+    </div>
+
+<%- include("partials/footer.ejs") %>

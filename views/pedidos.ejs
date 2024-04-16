@@ -1,7 +1,7 @@
 <%- include("partials/header.ejs") %>
 
     <div class="formularioPedidos mb-4">
-        <form action="" method="post">
+        <form action="/pedidos/new" method="post">
             <h1 class="text-dark fw-bold fs-2">Cadastro de Pedidos</h1>
             <div class="form-floating my-2 mt-4">
                 <input type="number" name="numero" id="floatingInput" class="form-control" placeholder="Numero do pedido" required>
@@ -25,14 +25,12 @@
             </tr>
         </thead>
         <tbody>
-            <% pedidos.forEach(pedido => { %>
             <tr>
                 <td><%= pedido.numero %></td>
                 <td><%= pedido.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
                 <td><a href="/pedidos/edit/<%= pedido._id %>" class="btn btn-warning text-white">Editar</a></td>
                 <td><a href="/pedidos/delete/<%= pedido._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a></td>
             </tr>
-            <% }) %>
         </tbody>
     </table>
 
