@@ -17,7 +17,11 @@
 }
 
 .formularioProdutos{
-    width: 95%;
+    width: 71%;
+}
+
+.formularioPedidos{
+    width: 30%;
 }
 
 .inpNome{
@@ -40,7 +44,7 @@ nav{
 }
 
 .containerCards{
-    width: 100%;
+    width: 75%;
     height: 100%;
 
     display: flex;
