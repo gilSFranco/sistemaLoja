@@ -46,13 +46,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><%= cliente.nome %></td>
-                <td><%= cliente.cpf %></td>
-                <td><%= cliente.rua %>, Nº <%= cliente.numero %>, <%= cliente.bairro %> - <%= cliente.cidade %></td>
-                <td><a href="/clientes/edit/<%= cliente._id %>" class="btn btn-warning text-white">Editar</a></td>
-                <td><a href="/clientes/delete/<%= cliente._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a></td>
-            </tr>
+            <% cliente.forEach(cliente => { %>
+                <tr>
+                    <td><%= cliente.nome %></td>
+                    <td><%= cliente.cpf %></td>
+                    <td><%= cliente.rua %>, Nº <%= cliente.numero %>, <%= cliente.bairro %> - <%= cliente.cidade %></td>
+                    <td><a href="/clientes/edit/<%= cliente._id %>" class="btn btn-warning text-white">Editar</a></td>
+                    <td><a href="/clientes/delete/<%= cliente._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a></td>
+                </tr>
+            <% }) %>
         </tbody>
     </table>
 

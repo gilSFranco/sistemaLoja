@@ -1,7 +1,7 @@
 <%- include("partials/header.ejs") %>
 
     <div class="formularioProdutos mb-5">
-        <form action="/produtos/new" method="post">
+        <form action="/produtos/new" method="post" enctype= multipart/form-data>
             <h1 class="text-dark fw-bold fs-2">Cadastro de Produtos</h1>
             <div class="d-flex my-2 mt-4">
                 <div class="form-floating me-2 w-75">
@@ -19,7 +19,7 @@
                     <label for="floatingInput">Categoria</label>
                 </div>
                 <div class="input-group mb-4">
-                    <input type="file" name="imagem" class="form-control" id="inputGroupFile02" accept=".jpg, .jpeg, .png" required>
+                    <input type="file" name="imagem" class="form-control" id="inputGroupFile02" accept="image/*" required>
                     <label class="input-group-text" for="inputGroupFile02">Escolha uma imagem</label>
                 </div>
             </div>
@@ -28,18 +28,20 @@
     </div>
 
     <div class="containerCards">
-        <div class="card" style="width: 18rem;">
-            <img src='<%= produto.imagem %>' class="card-img-top" alt="Imagem">
-            <div class="card-body">
-                <h5 class="card-title"><%= produto.nome %> (<%= produto.categoria %>)</h5>
-                <p class="card-text"><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %>.</p>
-                <a href="" class="btn btn-dark btnComprar">Comprar</a>
-            </div>            
-            <div class="acoes">
-                <a href="/produtos/edit/<%= produto._id %>" class="btn btn-warning text-white">Editar</a>
-                <a href="/produtos/delete/<%= produto._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a>
+        <% produto.forEach(produto => { %>
+            <div class="card" style="width: 18rem;">
+                <img src='assets/<%= produto.imagem %>' class="card-img-top" alt="Imagem">
+                <div class="card-body">
+                    <h5 class="card-title"><%= produto.nome %> (<%= produto.categoria %>)</h5>
+                    <p class="card-text"><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %>.</p>
+                    <a href="" class="btn btn-dark btnComprar">Comprar</a>
+                </div>            
+                <div class="acoes">
+                    <a href="/produtos/edit/<%= produto._id %>" class="btn btn-warning text-white">Editar</a>
+                    <a href="/produtos/delete/<%= produto._id %>" class="btn btn-danger" onclick="return confirm('Confirma a exclusão do registro? ')">Excluir</a>
+                </div>
             </div>
-        </div>
+        <% }) %>
     </div>
 
 <%- include("partials/footer.ejs") %>
