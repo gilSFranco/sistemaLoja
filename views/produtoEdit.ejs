@@ -2,7 +2,7 @@
 
     <div class="formularioProdutos mb-5">
         <form action="/produtos/update/<%= produto._id %>" method="post">
-            <h1 class="text-dark fw-bold fs-2">Cadastro de Produtos</h1>
+            <h1 class="text-dark fw-bold fs-2">Atualizando suas informações</h1>
             <div class="d-flex my-2 mt-4">
                 <div class="form-floating me-2 w-75">
                     <input type="text" name="nome" id="floatingInput" class="form-control" value="<%= produto.nome %>" placeholder="Nome do produto" required>
@@ -23,7 +23,7 @@
                     <label class="input-group-text" for="inputGroupFile02">Escolha uma imagem</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-dark w-100 py-2 mt-3">Cadastrar</button>
+            <button type="submit" class="btn btn-dark w-100 py-2 mt-3">Atualizar</button>
         </form>
     </div>
 

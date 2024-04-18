@@ -24,6 +24,11 @@
     width: 30%;
 }
 
+.formularioLogin{
+    max-width: 350px;
+    padding: 1rem;
+}
+
 .inpNome{
     width: 100%;
 }
@@ -108,4 +113,44 @@ ul.navbar-nav .navbar-brand{
 .btnComprar{
     width: 100%;
     padding: 10px;
+}
+
+.wrap-login{
+    width: 100vw;
+    height: 100vh;
+}
+
+.min-wrap-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+.tittle{
+    justify-content: space-between;
+}
+
+.formulario-login{
+    min-width: 300px;
+}
+
+.animacao{
+    height: 300px;
+}
+
+.welcome-container{
+    align-items: center;
+}
+
+.title-welcome{
+    max-width: 280px;
+    flex-direction: column;
+}
+
+.conteudo-welcome{
+    text-align: justify;
 }

@@ -1,6 +1,6 @@
 import express from "express"
-const router = express.Router()
 import ClienteService from "../service/ClienteService.js"
+const router = express.Router()
 
 router.get("/clientes", (req, res) => {
     ClienteService.selectAll().then(cliente => {

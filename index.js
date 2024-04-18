@@ -6,6 +6,7 @@ import mongoose from "mongoose"
 import ClientesController from "./controllers/ClientesController.js"
 import ProdutosController from "./controllers/ProdutosController.js"
 import PedidosController from "./controllers/PedidosController.js"
+import UsersController from "./controllers/UsersController.js"
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 app.use("/", ClientesController)
 app.use("/", ProdutosController)
 app.use("/", PedidosController)
+app.use("/", UsersController)
 
 app.listen(8080, erro => {
     if(erro){
