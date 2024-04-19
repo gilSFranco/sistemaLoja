@@ -27,7 +27,7 @@ app.set("view engine", "ejs")
 
 app.use(express.static('public'))
 
-app.get("/", (req, res) => {
+app.get("/", Auth, (req, res) => {
     res.render("index")
 })
 
@@ -36,7 +36,7 @@ app.use("/", ProdutosController)
 app.use("/", PedidosController)
 app.use("/", UsersController)
 
-app.listen(8080, Auth, erro => {
+app.listen(8080, erro => {
     if(erro){
         console.log("Ocorreu um erro!")
     } else{

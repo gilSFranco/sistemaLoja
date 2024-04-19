@@ -1,21 +1,26 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav m-4">
-        <a class="navbar-brand me-4" href="/"><i class="fa-brands fa-ethereum fs-1 animacao-timer"></i></a>
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home</a>
+        <a class="navbar-brand me-4" href="/"><i class="fa-brands fa-ethereum fs-2 animacao-timer"></i></a>
+        <li class="nav-item active m-auto">
+          <a class="nav-link navigation-bar" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Clientes">Clientes</a>
+        <li class="nav-item m-auto">
+          <a class="nav-link navigation-bar" href="/Clientes">Clientes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pedidos">Pedidos</a>
+        <li class="nav-item m-auto">
+          <a class="nav-link navigation-bar" href="/Pedidos">Pedidos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Produtos">Produtos</a>
+        <li class="nav-item m-auto">
+          <a class="nav-link navigation-bar" href="/Produtos">Produtos</a>
         </li>
       </ul>
-
-      <span>i</span>
+      <span class="login-span me-5">
+        <% if(typeof loggedOut === "undefined"){ %>
+            <a class="link-login d-flex align-items-center text-light" href="/logout">Fazer logout <i class="fa-solid fa-arrow-right-from-bracket fs-6"></i></a>
+        <% } else{ %>
+            <a class="link-login d-flex align-items-center text-light" href="/login">Fazer login <i class="fa-solid fa-arrow-right-to-bracket fs-6"></i></a>
+        <% } %>
+      </span>
     </div>
   </nav>

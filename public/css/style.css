@@ -77,12 +77,12 @@ main{
     padding: 50px;
 
     width: 100%;
-    min-height: 60%;
+    min-height: 70%;
 }
 
 header{
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
 
 footer{
@@ -166,4 +166,20 @@ ul.navbar-nav .navbar-brand{
 #navbarNavDropdown{
     width: 100%;
     height: 100%;
+
+    justify-content: space-between;
+}
+
+.session-link{
+    text-decoration: none;
+}
+
+.navigation-bar{
+    padding: 0;
+}
+
+.link-login{
+    text-decoration: none;
+
+    gap: 10px;
 }

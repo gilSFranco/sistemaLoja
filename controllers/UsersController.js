@@ -21,7 +21,7 @@ router.get("/cadastro", (req, res) => {
   })
 })
 
-router.post("/user/new", (req, res) => {
+router.post("/createUser", (req, res) => {
   const email = req.body.email
   const password = req.body.password
 
@@ -34,7 +34,7 @@ router.post("/user/new", (req, res) => {
 
       res.redirect("/login")
     } else{
-      res.send(`Usuário já cadastrado! <br> <a href='/cadastro'>Tentar novamente.</a>`)
+      res.render("userAlreadyExist")
     }
   })
 })
@@ -55,10 +55,10 @@ router.post("/authenticate", (req, res) => {
 
         res.redirect("/")
       } else{
-        res.send(`Senha inválida! <br> <a href='/login'>Tentar novamente.</a>`)
+        res.render("userAlreadyExist")
       }
     } else{
-      res.send(`Usuário não existe. <br> <a href='/login'>Tentar novamente.</a>`)
+      res.render("userAlreadyExist")
     }
   })
 })
