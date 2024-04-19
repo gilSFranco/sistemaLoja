@@ -3,6 +3,16 @@ const app = express()
 
 import mongoose from "mongoose"
 
+import session from "express-session"
+import Auth from "./middleware/Auth.js"
+
+app.use(session({
+    secret: "lojasecret",
+    cookie: { maxAge: 3600000 },
+    saveUninitialized: false,
+    resave: false
+}))
+
 import ClientesController from "./controllers/ClientesController.js"
 import ProdutosController from "./controllers/ProdutosController.js"
 import PedidosController from "./controllers/PedidosController.js"
@@ -26,7 +36,7 @@ app.use("/", ProdutosController)
 app.use("/", PedidosController)
 app.use("/", UsersController)
 
-app.listen(8080, erro => {
+app.listen(8080, Auth, erro => {
     if(erro){
         console.log("Ocorreu um erro!")
     } else{
