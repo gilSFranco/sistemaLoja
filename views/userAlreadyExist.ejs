@@ -17,7 +17,11 @@
             <h1 class="fw-bold">Erro!</h1>
             <p class="fw-normal">Algo deu errado em sua navegação.</p>
         </div>
-        <p class="conteudo-welcome fw-light">Esse usuário não existe ou já está na nossa base de dados. Vá para o <a href="/login" class="session-link">login</a> e tente novamente.</p>
+        <% if(typeof isPagCadastro == "undefined"){ %>
+          <p class="conteudo-welcome fw-light">Esse usuário não existe ou sua senha está incorreta. Vá para a página de <a href="/login" class="session-link">login</a> e tente novamente.</p>
+        <% } else{ %>
+          <p class="conteudo-welcome fw-light">Esse usuário já está cadastrado. Vá para a página de <a href="/cadastro" class="session-link">cadastro</a> e tente novamente.</p>
+        <% } %>
     </div>
     <img src="imgs\404-error.svg" alt="animacao" class="animacao-index">
     </div>

@@ -34,7 +34,9 @@ router.post("/createUser", (req, res) => {
 
       res.redirect("/login")
     } else{
-      res.render("userAlreadyExist")
+      res.render("userAlreadyExist", {
+        isPagCadastro: true
+      })
     }
   })
 })
